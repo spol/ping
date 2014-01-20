@@ -1,0 +1,21 @@
+{
+    "name": "spol/ping",
+    "description": "A toy PNG encoder/decoder written in pure PHP.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Seb Pollard"
+        }
+    ],
+    "require": {
+        "php": ">=5.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "spol/path": "*"
+    },
+    "type": "library",
+    "autoload": {
+        "psr-4": { "Spol\\Ping\\": "src/" }
+    }
+}
