@@ -51,7 +51,7 @@ class PngWriter
 		fwrite($file, pack('N', 13));
 
 		$colortype = $image->isGreyscale() ? 0 : 2;
-//		$colortype += $image->hasAlpha() ? 4 : 0;
+		$colortype += $image->hasAlphaChannel() ? 4 : 0;
 
 		$headerdata = pack('A4NNCCCCC',
 			'IHDR',

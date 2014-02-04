@@ -9,11 +9,13 @@ class Image
 	private $hasAlpha = false;
 	private $isGreyscale = false;
 
-	public function __construct($pixelData, $height=null, $depth=8, $color=true)
+	public function __construct($pixelData, $height=null, $depth=8, $color=true, $alpha=false)
 	{
 		$this->depth = $depth;
 
 		$this->isGreyscale = !$color;
+
+		$this->hasAlpha = $alpha;
 
 		// Does $pixelData actually contain a width?
 		if ($pixelData !== null && is_numeric($pixelData) && $height != null && is_numeric($height))

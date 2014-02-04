@@ -76,11 +76,11 @@ class PngReader
 
             if ($this->colortype & PNGReader::PALETTE)
             {
-                return new Image($this->parseImageData($imageDataChunks), null, 8, $this->colortype & PNGReader::COLOR);
+		return new Image($this->parseImageData($imageDataChunks), null, 8, $this->colortype & PNGReader::COLOR, $this->colortype & PNGReader::ALPHA);
             }
             else
             {
-                return new Image($this->parseImageData($imageDataChunks), null, $this->depth, $this->colortype & PNGReader::COLOR);
+		return new Image($this->parseImageData($imageDataChunks), null, $this->depth, $this->colortype & PNGReader::COLOR, $this->colortype & PNGReader::ALPHA);
             }
         }
         else
