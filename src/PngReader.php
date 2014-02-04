@@ -354,7 +354,8 @@ class PngReader
         }
         unset($chunks);
 
-        $data = gzinflate(substr($data,2,$length - 6)); // 2 bytes on the front and 4 at the end
+	$data = gzuncompress($data);
+
         if ($data == false)
         {
             throw new PngFormatException('Error decompressing image data.');
