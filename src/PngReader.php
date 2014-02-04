@@ -76,11 +76,11 @@ class PngReader
 
             if ($this->colortype & PNGReader::PALETTE)
             {
-		return new Image($this->parseImageData($imageDataChunks), null, 8, $this->colortype & PNGReader::COLOR, $this->colortype & PNGReader::ALPHA);
+                return new Image($this->parseImageData($imageDataChunks), null, 8, $this->colortype & PNGReader::COLOR, $this->colortype & PNGReader::ALPHA);
             }
             else
             {
-		return new Image($this->parseImageData($imageDataChunks), null, $this->depth, $this->colortype & PNGReader::COLOR, $this->colortype & PNGReader::ALPHA);
+                return new Image($this->parseImageData($imageDataChunks), null, $this->depth, $this->colortype & PNGReader::COLOR, $this->colortype & PNGReader::ALPHA);
             }
         }
         else
@@ -354,7 +354,7 @@ class PngReader
         }
         unset($chunks);
 
-	$data = gzuncompress($data);
+        $data = gzuncompress($data);
 
         if ($data == false)
         {
@@ -417,7 +417,7 @@ class PngReader
                     break;
                 case 4: // Paeth
                     $scanlines[$line] = substr($scanlines[$line], 1);
-		    $scanlines[$line] = InverseScanlineFilter::paeth($scanlines[$line], $line > 0 ? $scanlines[$line-1] : 0, $bytesPerPixel);
+                    $scanlines[$line] = InverseScanlineFilter::paeth($scanlines[$line], $line > 0 ? $scanlines[$line-1] : 0, $bytesPerPixel);
                     break;
             }
 
