@@ -393,21 +393,11 @@ class PngReader
 
         $rows = array();
 
-/*      $previous = null; */
-
         $scanlines = str_split($data, $scanlineByteLength);
         unset($data);
 
         for ($line = 0; $line < $height; ++$line)
         {
-            // var_dump(memory_get_usage());
-//          $scanline = new Scanline(substr($data, $line*$scanlineByteLength, $scanlineByteLength));
-
-/*
-            $scanline = new Scanline(substr($data, 0, $scanlineByteLength));
-            $data = substr($data, $scanlineByteLength);
-*/
-            // echo(current(unpack('C', $scanlines[$line][0])));
             switch (current(unpack('C', $scanlines[$line][0])))
             {
                 case 0:
